@@ -1,4 +1,4 @@
-// pPrimeiro alerta com JavaScript
+// Primeiro alerta com JavaScript
 
 
 alert("Olá, JavaScript")
