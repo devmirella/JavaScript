@@ -1,6 +1,7 @@
 // Concatenando texto com variáveis
 
 
+
 let nome = "Anna";
 let idade = 31;
 
