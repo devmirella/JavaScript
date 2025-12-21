@@ -1,7 +1,6 @@
 // Variáveis em JavaScript 
 
 
-
 let nome = "Marina";
 let idade = 27;
 
