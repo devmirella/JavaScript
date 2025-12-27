@@ -1,0 +1,82 @@
+
+:root {
+    /* Variáveis globais de cores */
+    --verde-claro: #00FF00;
+    --branco: #ffffff;
+    --preto: #000000; 
+
+}
+
+* {
+    /* Aplica a todos os elementos */
+    color: var(--cor-texto);
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+    /* Fundo da página usa variável de tema */
+    background-color:  var(--cor-fundo);
+    margin: 0;
+}
+
+.container {
+    /* Espaçamento interno do conteúdo */
+    padding: 40px;
+}
+
+.lista-tarefas {
+    /* Fonte específica da lista */
+    font-family: Helvetica;
+}
+
+.lista-tarefas li {
+    /* Estilo padrão dos itens */
+    list-style: circle;
+}
+
+
+.lista-tarefas li.quadrado  {
+     /* Itens destacados usam marcador quadrado */
+     list-style: square;
+}
+
+.tema-claro {
+    --cor-fundo: var(--verde-claro);
+    --cor-texto: var(--preto);
+    --cor-botao: var(--preto);
+    --cor-texto-botao: var(--branco);
+}
+
+.tema-escuro {
+    --cor-fundo: var(--preto);
+    --cor-texto: var(--verde-claro);
+    --cor-botao: var(--branco);
+    --cor-texto-botao: var(--preto);
+}
+
+.botao-tema {
+    /* Posição do botão */
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    /* tamanho */
+    width: 60px;
+    height: 60px;
+
+    /* forma circular */
+    border-radius: 50%;
+    border: none;
+
+    /* cores baseadas no tema */
+    background-color: var(--cor-botao);
+    color: var(--cor-texto-botao);
+
+    cursor: pointer;
+
+}
+
+.botao-tema:focus {
+    /* Remove a borda azul padrão ao clicar */
+    outline: none;
+}
