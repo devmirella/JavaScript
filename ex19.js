@@ -3,7 +3,7 @@
 
 
 
-let idade = Number(prompt("Informe a sua idade: "))
+let idade = Number(prompt("Informe a sua idade: "));
 
 if (isNaN(idade)) {
     alert("Por favor, digite um número:");
