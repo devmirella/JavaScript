@@ -17,6 +17,11 @@ body {
     /* Fundo da página usa variável de tema */
     background-color:  var(--cor-fundo);
     margin: 0;
+    
+}
+
+h1 {
+    text-align: center;
 }
 
 .container {
@@ -79,4 +84,46 @@ body {
 .botao-tema:focus {
     /* Remove a borda azul padrão ao clicar */
     outline: none;
+}
+
+
+/* seção de controle de gastos */
+
+
+.secao-gastos {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cor-texto);
+}
+
+.secao-gastos h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.secao-gastos .descricao {
+    margin-bottom: 15px;
+    
+}
+
+.input-gasto {
+    width: 150px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color:transparent;
+    color: var(--cor-texto);
+}
+
+.secao-gastos .botao-gasto {
+    border-radius: 10px;
+    padding: 2px;
+    cursor: pointer;
+    background-color: var(--cor-botao);
+    color: var(--cor-texto-botao);
+} 
+
+.resultado-gastos {
+    margin-top: 20px;
+    
+    
 }
