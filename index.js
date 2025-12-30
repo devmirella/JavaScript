@@ -55,7 +55,13 @@ function atualizarResultados(total, contador) {
 
     ps[0].textContent = `Total: R$ ${total.toFixed(2)}`;
     ps[1].textContent = `Quantidade: ${contador}`;
-    ps[2].textContent =  `Media: ${(total / contador).toFixed(2)};`
+
+    if (contador > 0) {
+        ps[2].textContent = `Média: R$ ${(total / contador).toFixed(2)}`;
+    } else {
+        ps[2].textContent = `Média: R$  0.00`;
+    }
+
 }
 
 
