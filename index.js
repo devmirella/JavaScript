@@ -84,3 +84,39 @@ botaoGasto.addEventListener("click", function() {
 
 
 });
+
+const estudosContainer = document.querySelector(".estudos-container");
+const estudos = [
+    {nome: "HTML", status: "em andamento", classe: "em-andamento"},
+    {nome: "CSS", status: "em andamento", classe: "em-andamento"},
+    {nome: "JavaScript", status: "em andamento", classe: "pausado"}
+
+];
+
+function renderizarEstudos() {
+    estudosContainer.innerHTML="";
+
+    estudos.forEach(estudo => {
+
+        const item = document.createElement("div");
+        item.classList.add("estudo-item");
+
+        const nome = document.createElement("p");
+        nome.classList.add("estudo-nome");
+        nome.textContent = estudo.nome;
+
+        const status = document.createElement("p");
+        status.classList.add("estudo-status", estudo.classe);
+        status.textContent = estudo.status;
+
+        item.appendChild(nome);
+        item.appendChild(status);
+
+        estudosContainer.appendChild(item);
+
+        
+    });
+}
+
+renderizarEstudos();
+    

@@ -1,9 +1,9 @@
 
 :root {
     /* Variáveis globais de cores */
-    --verde-claro: #00FF00;
+    --verde-claro: #a8f3a8;
     --branco: #ffffff;
-    --preto: #000000; 
+    --preto: #454043; 
 
 }
 
@@ -126,4 +126,83 @@ h1 {
     margin-top: 20px;
     
     
+}
+
+/* Secção de Estudos */
+
+
+.secao-estudo {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255, 0.03);
+}
+
+.secao-estudo h2 {
+    text-align: center;
+    position: relative; /* Permite mover o elemento */
+    top: -25px; /* sobe o título */
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    
+}
+
+.estudos-container {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.estudo-item {
+    padding: 16px;
+    border-radius: 30px;
+    min-width: 180px;
+    background-color: rgb(255, 255, 255, 0.05);
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.estudo-nome {
+    font-weight: 700;
+   
+}
+
+.estudo-status {
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+    .estudo-item {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+.estudo-status.em-andamento {
+    background-color: rgba(220, 197, 67, 0.25);
+    color: #e8cc2c;
+
+}
+
+.estudo-status.concluido {
+    background-color: rgb(46, 96, 46);
+    color: rgb(32, 203, 43);
+}
+
+.estudo-status.pausado {
+    border-color: rgb(180, 180, 180, 0.25);
+    color: #d0d0d0;
+}
+
+
+.estudo-status.nao-iniciado {
+    background-color: rgba(255, 0, 0, 0.25);
+    color: #ff8c8c;
 }
