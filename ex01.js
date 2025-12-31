@@ -2,4 +2,4 @@
 
 
 
-alert("Olá, JavaScript")
+alert("Olá, JavaScript");
