@@ -186,13 +186,14 @@ h1 {
 }
 
 .estudo-status.em-andamento {
-    background-color: rgba(220, 197, 67, 0.25);
-    color: #e8cc2c;
+    background-color: rgba(24, 175, 27, 0.35);
+    color: #14170e;
+    padding: 5px;
 
 }
 
 .estudo-status.concluido {
-    background-color: rgb(46, 96, 46);
+    background-color: rgb(78, 96, 46);
     color: rgb(32, 203, 43);
 }
 

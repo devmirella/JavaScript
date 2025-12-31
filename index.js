@@ -1,46 +1,35 @@
-
-
-// Ativa o modo estrito do JavaScript (evita erros silenciosos) 
+// Ativa o modo estrito do JavaScript (evita erros silenciosos)
 "use strict";
 
+
+// ======================
+// CONTROLE DE TEMA
+// ======================
 
 // Seleciona o botão de troca de tema no HTML
 const botaoTema = document.querySelector(".botao-tema");
 
+// Escuta o evento de clique no botão
+botaoTema.addEventListener("click", function () {
 
-// Escuta o evento de clique no botão 
-botaoTema.addEventListener("click", function() {
-
-    // Guarda o body em uma variável para facilitar a leitura
     const corpo = document.body;
 
-    // Se o body estiver no tema claro
     if (corpo.classList.contains("tema-claro")) {
-
-        // Remove a classe do tema claro 
         corpo.classList.remove("tema-claro");
-
-        // Adiciona a classe do tema escuro
         corpo.classList.add("tema-escuro");
-
-        //Muda o texto do botão 
         this.textContent = "Claro";
-
-    // Caso contrário tema escuro
     } else {
-        
-        // Remove o tema escuro
         corpo.classList.remove("tema-escuro");
-
-        // Adiciona o tema claro
         corpo.classList.add("tema-claro");
-
-        // Atualiza o texto do botão 
         this.textContent = "Escuro";
     }
 
 });
 
+
+// ======================
+// CONTROLE DE GASTOS
+// ======================
 
 let total = 0;
 let contador = 0;
@@ -59,50 +48,61 @@ function atualizarResultados(total, contador) {
     if (contador > 0) {
         ps[2].textContent = `Média: R$ ${(total / contador).toFixed(2)}`;
     } else {
-        ps[2].textContent = `Média: R$  0.00`;
+        ps[2].textContent = `Média: R$ 0.00`;
     }
-
 }
 
-
 // Evento do botão "Adicionar Gasto"
-botaoGasto.addEventListener("click", function() {
+botaoGasto.addEventListener("click", function () {
 
     const valor = Number(inputGasto.value);
 
-    // validações
     if (isNaN(valor) || valor <= 0) {
-        alert("Digite um valor válido");
         return;
+    }
 
-    } 
-    
-
-    // Atualiza os dados 
-    total += valor
-    contador ++;
+    total += valor;
+    contador++;
 
     atualizarResultados(total, contador);
 
-    // Limpa o campo
-    inputGasto.value="";
+    inputGasto.value = "";
     inputGasto.focus();
-
 
 });
 
-const estudosContainer = document.querySelector(".estudos-container");
-const estudos = [
-    {nome: "HTML", status: "em andamento", classe: "em-andamento"},
-    {nome: "CSS", status: "em andamento", classe: "em-andamento"},
-    {nome: "JavaScript", status: "em andamento", classe: "pausado"}
 
+// ======================
+// SEÇÃO DE ESTUDOS
+// ======================
+
+const estudosContainer = document.querySelector(".estudos-container");
+
+const estudos = [
+    { nome: "HTML", status: "em andamento", classe: "em-andamento" },
+    { nome: "CSS", status: "em andamento", classe: "em-andamento" },
+    { nome: "JavaScript", status: "em andamento", classe: "em-andamento" }
 ];
 
-function renderizarEstudos() {
-    estudosContainer.innerHTML="";
+// Função de decisão (regra de negócio)
+function proximoStatus(estudoAtual) {
 
-    estudos.forEach(estudo => {
+    if (estudoAtual.status === "em andamento") {
+        return { status: "pausado", classe: "pausado" };
+    }
+
+    if (estudoAtual.status === "pausado") {
+        return { status: "concluido", classe: "concluido" };
+    }
+
+    return { status: "em andamento", classe: "em-andamento" };
+}
+
+// Função de renderização (interface)
+function renderizarEstudos() {
+    estudosContainer.innerHTML = "";
+
+    estudos.forEach((estudo, index) => {
 
         const item = document.createElement("div");
         item.classList.add("estudo-item");
@@ -118,11 +118,17 @@ function renderizarEstudos() {
         item.appendChild(nome);
         item.appendChild(status);
 
-        estudosContainer.appendChild(item);
+        item.addEventListener("click", function () {
+            const novo = proximoStatus(estudos[index]);
+            estudos[index].status = novo.status;
+            estudos[index].classe = novo.classe;
 
-        
+            renderizarEstudos();
+        });
+
+        estudosContainer.appendChild(item);
     });
 }
 
+// Renderização inicial
 renderizarEstudos();
-    
