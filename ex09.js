@@ -1,6 +1,7 @@
 // Decisões com operadores lógicos
 
 
+
 let idade = Number(prompt("Digite sua idade: "));
 let temtitulo = prompt("Você possui titulo de eleitor? ").toLocaleLowerCase();
 
