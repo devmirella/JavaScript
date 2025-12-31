@@ -10,7 +10,7 @@ if (isNaN(idade)) {
     console.log("Número inválido");
 
 } else if (idade >= 18) {
-    alert("É maior de idade.")
+    alert("É maior de idade.");
     console.log("É maior de idade", idade)
 } else {
     alert("É menor de idade.");
