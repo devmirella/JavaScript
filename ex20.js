@@ -1,6 +1,6 @@
 // Sistema de notas
 
-soma = 0
+soma = 0;
 
 while (true) {
     let nota = Number(prompt("Informe a nota ou digite 0 para encerrar:"));
@@ -13,7 +13,7 @@ while (true) {
         break;
     }
 
-    soma += nota 
+    soma += nota;
 }
 
 if (soma >= 80) {
