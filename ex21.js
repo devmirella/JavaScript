@@ -1,6 +1,7 @@
 // Controle simples de gastos
 
 
+
 let soma = 0;
 let contador = 0;
 
