@@ -1,6 +1,7 @@
 // Funções
 
 
+
 function calcularMedia(soma, contador) {
     let media = soma / contador;
     return media;
