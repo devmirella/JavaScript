@@ -1,5 +1,6 @@
 // Repetição com while (Idade válida)
 
+
 let idade = Number(prompt("Informe sua idade (0 a 120): "));
 
 while (isNaN(idade)|| idade < 0 || idade > 120){
