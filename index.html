@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier | Acesso</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+            * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+        background-color: #0f0f0f;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .container {
+        width: 90%;
+        max-width: 1100px;
+        height: 600px;
+        display: flex;
+        background-color: #151515;
+        border-radius: 12px;
+        overflow: hidden;
+        }
+
+        .arte {
+        width: 50%;
+        background: linear-gradient(135deg, #333, #111);
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        padding: 30px;
+        }
+
+        .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        }
+
+        .frase {
+        position: relative;
+        color: #e0e0e0;
+        font-size: 14px;
+        }
+
+        .formulario {
+        width: 50%;
+        padding: 60px;
+        color: #fff;
+        }
+
+        .formulario h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+        }
+
+        .subtitulo {
+        color: #aaa;
+        margin-bottom: 40px;
+        }
+
+        form {
+        display: flex;
+        flex-direction: column;
+        }
+
+        input {
+        background-color: #1f1f1f;
+        border: none;
+        padding: 14px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+        color: #fff;
+        }
+
+        button {
+        padding: 14px;
+        background-color: #17b3a3;
+        border: none;
+        border-radius: 6px;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+        }
+
+    </style>
+
+</head>
+<body>
+
+  <main class="container">
+
+    <section class="arte">
+      <div class="overlay"></div>
+      <p class="frase">Arte também é silêncio.</p>
+    </section>
+
+    <section class="formulario">
+      <h1>Atelier</h1>
+      <p class="subtitulo">Acesso ao Atelier</p>
+
+      <form>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Senha">
+        <button type="submit">Entrar</button>
+      </form>
+    </section>
+
+  </main>
+
+</body>
+</html>
