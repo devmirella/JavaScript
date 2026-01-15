@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> login com validação correta </title>
+    <script src="ex23.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1> login com validação correta </h1>
+    </main>
+    <script>
+
+        // Dados corretos do sistema
+        const emailCerto = "admin48@gmail.com";
+        const senhaCerta = "365241";
+
+        // Dados informados pelo usuário
+        const emailDigitado = "";
+        const senhaDigitada = "365241";
+
+        if (emailDigitado === "" || senhaDigitada === "") {
+            console.log("Preencha todos os campos");
+        } else if (emailCerto !== emailDigitado) {
+            console.log("Email inválido");
+        } else if (senhaCerta !== senhaDigitada) {
+            console.log("Senha inválida");
+        } else {
+            console.log("Login realizado com sucesso");
+        }
+       
+    </script>
+</body>
+</html>
