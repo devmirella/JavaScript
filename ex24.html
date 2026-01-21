@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> login com validação correta </title>
+    <script src="ex24.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1> Validação de Login com Retorno Booleano </h1>
+    </main>
+    <script>
+        function validarAcesso(emailDigitado, senhaDigitada) {
+            const emailCerto = "admin12@gmail.com";
+            const senhaCerta = "123456";
+
+            if (emailDigitado === "" || senhaDigitada === "") {
+                console.log("Preencha todos os campos");
+                return false;
+            } else if (emailDigitado !== emailCerto) {
+                console.log("Email inválido");
+                return false;
+            } else if (senhaDigitada !== senhaCerta) {
+                console.log("Senha inválida");
+                return false;
+            } 
+              console.log("Login efetuado");
+              return true;
+        }
+
+        const resultado = validarAcesso("", "123456");
+
+        if (resultado === true) {
+            console.log("Entrar no sistema");
+        } else {
+            console.log("Acesso negado");
+        }
+
+       
+    </script>
+</body>
+</html>
