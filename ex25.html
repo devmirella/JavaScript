@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> login com validação correta </title>
-    <script src="ex24.js" defer></script>
+    <title> Validação de Login com Retorno de Objeto </title>
+    <script src="ex25.js" defer></script>
 </head>
 <body>
     <main>
@@ -17,25 +17,23 @@
 
             if (emailDigitado === "" || senhaDigitada === "") {
                 return {
+                    
                     sucesso: false,
                     mensagem: "Preencha todos os campos"
                 };
-            } 
-
+            }
             if (emailDigitado !== emailCorreto) {
                 return {
                     sucesso: false,
                     mensagem: "Email inválido"
                 };
             }
-
             if (senhaDigitada !== senhaCorreta) {
                 return {
                     sucesso: false,
                     mensagem: "Senha inválida"
                 };
             }
-
             return {
                 sucesso: true,
                 mensagem: "Login realizado"
