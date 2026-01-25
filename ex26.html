@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Validação com Retorno de Objeto e Controle de Tentativas </title>
+    <script src="ex26.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Validação com Retorno de Objeto e Controle de Tentativas</h1>
+    </main>
+    <script>
+        let contador = 0;
+    function validar1(nome) {
+        const nomeSalvo = "tiago";
+        if (nome !== nomeSalvo) {
+            contador++;
+            return {
+                sucesso: false,
+                mensagem: "Nome de usuário incorreto."
+            };
+        }
+        return {
+            sucesso: true,
+            mensagem: "Nome de usuário correto."
+        };  
+    }
+    
+    function validar2(idade) {
+        const idadeSalva = 26;
+        if (idade !== idadeSalva) {
+            contador++;
+            return {
+                sucesso: false,
+                mensagem: "Idade de usuário incorreta."
+            };
+        }
+        return {
+            sucesso: true,
+            mensagem: "Idade do usuário correta."
+        };
+    }
+
+    const verificação1 = validar1("Luiz");   
+    if (verificação1.sucesso === true) {
+        const verificação2 = validar2(26);
+        if (verificação2.sucesso === true) {
+            console.log("Sucesso");
+        } else {
+            console.log(verificação2.mensagem);
+
+            if (contador < 3) {
+                console.log("Você pode realizar uma nova tentaiva.");
+            } else {
+                console.log("Suas tentativas chegaram ao fim");
+                console.log("tentativas: " + contador);
+            }
+
+        
+        }
+        
+    } else {
+        console.log(verificação1.mensagem);
+        
+
+        if (contador < 3) {
+            console.log("Você pode realizar uma nova tentaiva.");
+        } else {
+            console.log("Suas tentativas chegaram ao fim");
+            console.log("tentativas: " + contador);
+        }
+    }
+
+    </script>
+</body>
+</html>
