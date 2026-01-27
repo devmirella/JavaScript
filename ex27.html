@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Tentativas com Validação em Duas Etapas (Nome e Idade)</title>
+    <script src="ex27.js" defer></script>
+</head>
+<body>
+    <script>
+        let counter1 = 0;
+        let counter2 = 0;
+        let limit = 3;
+
+        function validateLogin(typedName) {
+            const savedName = "Luan";
+
+            if (typedName !== savedName) {
+                counter1++;
+                return {
+                    success: false,
+                    message: "Invalid name"
+                  };
+            } return {
+                success: true,
+                message: "Valid name"
+            };
+        }
+
+        function validateAge(typedAge) {
+            const savedAge = 30;
+
+            if (typedAge !== savedAge) {
+                counter2++;
+                return {
+                    success: false,
+                    message: "Invalid age"
+                };
+            } return {
+                success: true,
+                message: "Valid age"
+            };
+        }
+
+        while (counter1 < limit) {
+
+            const result1 = validateLogin("Luan");
+
+            if (result1.success === true) {
+                console.log(result1.message);
+
+                while (counter2 < limit) {
+
+                    const result2 = validateAge(30);
+
+                    if (result2.success === true) {
+                        console.log(result2.message);
+                        break;
+                    } else {
+                        console.log("Please try again");
+                    }
+                }
+
+                if (counter2 === limit) {
+                    console.log("Attempt limit exceeded");
+                }
+
+                break;
+            } else {
+                console.log("Please try again")
+            }
+
+        }
+
+        if (counter1 === limit) {
+            console.log("Attempt limit exceeded");
+        }
+        
+
+    </script>
+</body>
+</html>
