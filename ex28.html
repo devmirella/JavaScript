@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Tentativas com Validação em Duas Etapas (Nome e Idade)</title>
+    <script src="ex28.js" defer></script>   
+</head>
+<body>      
+    <script>
+
+        let tentativas = 0;
+        let limite = 3;
+        
+        function validarCodigo(codigoDigitado) {
+            const codigoSalvo = "AHGD";
+
+            if (codigoDigitado !== codigoSalvo) {
+                return {
+                    sucesso: false,
+                    mensagem: "codigo inválido"
+                };
+            } return {
+                sucesso: true,
+                mensagem: "codigo válido"
+            };
+        } 
+
+        const codigoDigitado = "52463";
+
+        while (tentativas < limite) {
+
+            const verificação = validarCodigo(codigoDigitado);
+
+            if(!verificação.sucesso) {
+                tentativas++;
+                console.log(verificação.mensagem);
+                continue;
+
+            } 
+            console.log(verificação.mensagem);
+            break;
+        }
+
+        if (tentativas === limite) {
+            console.log("Acesso bloqueado por excesso de tentativas");
+        }
+
+
+
+
+
+
+
+
+
+    </script>
