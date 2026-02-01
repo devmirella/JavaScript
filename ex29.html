@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso do do...while para garantir execução mínima</title>
+    <script src="ex29.js" defer></script>   
+</head>
+<body>    
+    <script>
+
+      let contador = 0;
+      let limite = 3;
+      let codigoSalvo = "123sd";    
+
+      function validar(codigoDigitado) {
+         if (codigoDigitado !== codigoSalvo) {
+            return false;
+         }
+         return true;
+      }
+
+      while (contador < limite){
+        let codigoDigitado = prompt("Digite o codigo");
+
+        if (codigoDigitado === codigoSalvo) {
+            alert("sucesso");
+            break;
+        }
+        contador++;
+      }
+
+      if (contador === limite) {
+        alert("Tentativas esgotadas");
+      }
+    </script>
+</body>     
+</html>
