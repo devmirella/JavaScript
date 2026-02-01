@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>do...while com validação de código</title>
+    <script src="ex30.js" defer></script>
+</html>
+<body>
+    <script>
+        let contador = 0;
+        let tentativas = 3;
+        let codigoSalvo = "1235d";
+
+        function validar(codigoDigitado) {
+            if (codigoDigitado !== codigoSalvo) {
+                return {
+                    sucesso: false,
+                    mensagem: "erro"
+                };
+            }
+            return {
+                sucesso: true,
+                mensagem: "sucesso"
+            };
+        }
+
+        do {
+            let codigoDigitado = prompt("Digite o codigo");
+            let validar1 = validar(codigoDigitado);
+
+            if (validar1.sucesso === true){
+                alert(validar1.mensagem)
+                break;
+            }
+            alert(validar1.mensagem)
+            contador++;
+        }   
+        while (contador < tentativas);
+
+        if (contador === tentativas) {
+            alert("Tentativas esgotadas");
+        }   
+        
+
+    </script>
+</body>
+</html> 
