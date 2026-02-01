@@ -1,83 +1,68 @@
-JavaScript – Fundamentos
+# JavaScript – Fundamentos
 
-Este repositório reúne meus estudos iniciais em JavaScript, com foco na construção de uma base sólida em lógica de programação e compreensão da linguagem.
+Este repositório reúne meus estudos iniciais em **JavaScript**, com foco na construção de uma **base sólida em lógica de programação** e compreensão da linguagem.
 
-O aprendizado está sendo feito de forma estruturada, priorizando o entendimento real dos conceitos antes de avançar para manipulação do DOM e aplicações mais complexas.
+O aprendizado está sendo feito de forma **estruturada**, priorizando o entendimento real dos conceitos antes de avançar para manipulação do DOM e aplicações mais complexas.
 
+---
 
-🧠 Conteúdos abordados até o momento
+## 🧠 Conteúdos abordados até o momento
 
-Introdução ao JavaScript
+- Introdução ao JavaScript  
+- Variáveis (`let`, `const`)  
+- Tipos de dados  
+- Entrada e saída de dados (`prompt`, `alert`, `console.log`)  
+- Operadores  
+- Estruturas condicionais (`if / else`)  
 
-Variáveis (let, const)
+### 🔧 Funções
+- Criação de funções  
+- Funções com parâmetros  
+- Retorno de valores (`return`)  
+- Funções para validação de dados  
 
-Tipos de dados
+### 🔁 Estruturas de repetição
+- `while`  
+- `do...while`  
+- Controle de tentativas e fluxo de execução  
+- Uso de `break` para interrupção de loops  
 
-Entrada e saída de dados (prompt, alert, console.log)
+### 🧠 Lógica
+- Lógica básica aplicada  
+- Leitura, organização e refatoração de código  
 
-Operadores
+---
 
-Estruturas condicionais (if / else)
+## 🎯 Objetivo do repositório
 
-Funções
+- Consolidar fundamentos de JavaScript  
+- Desenvolver raciocínio lógico  
+- Evitar aprendizado superficial  
+- Criar uma base consistente para projetos front-end  
 
-Criação de funções
+---
 
-Funções com parâmetros
+## 🚧 Próximos conteúdos (em desenvolvimento)
 
-Retorno de valores (return)
+- Manipulação do DOM  
+- Seleção de elementos (`querySelector`)  
+- Eventos  
+- Funções mais avançadas  
+- Armazenamento local (`localStorage`)  
+- Conversão de dados com JSON  
+- Validações e fluxos de formulários  
 
-Funções para validação de dados
+---
 
-Estruturas de repetição (while, do...while)
+## 🛠️ Tecnologias
 
-Controle de tentativas e fluxo de execução
+- JavaScript  
+- HTML  
+- CSS  
 
-Uso de break para interrupção de loops
+---
 
-Lógica básica aplicada
+## 👩‍💻 Autora
 
-Leitura, organização e refatoração de código
-
-
-🎯 Objetivo do repositório
-
-Consolidar fundamentos de JavaScript
-
-Desenvolver raciocínio lógico
-
-Evitar aprendizado superficial
-
-Criar uma base consistente para projetos front-end
-
-
-🚧 Próximos conteúdos (em desenvolvimento)
-
-Manipulação do DOM
-
-Seleção de elementos (querySelector)
-
-Eventos
-
-Funções mais avançadas
-
-Armazenamento local (localStorage)
-
-Conversão de dados com JSON
-
-Validações e fluxos de formulários
-
-
-🛠️ Tecnologias
-
-JavaScript
-
-HTML
-
-CSS
-
-
-👩‍💻 Autora
-
-Mirella Marina
+**Mirella Marina**  
 Desenvolvedora em formação, focada em base sólida, organização e evolução contínua.
