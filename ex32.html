@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício: for...of com arrays</title>
+    <script src="ex32.js" defer></script>   
+</head>
+<body>  
+    <script> 
+
+        function validarAcesso(codigoDigitado) {
+            const codigoSalvo = "321";
+
+            if (codigoDigitado !== codigoSalvo) {
+                return false;
+            } 
+            return true;
+        }
+
+        let contador = 0;
+        let tentativas = 3;
+
+        do {
+            let codigoDigitado = prompt("Digite o código de acesso");
+
+            let valido = validarAcesso(codigoDigitado); 
+
+            if (valido) {
+                alert("Sucesso");
+                break;
+            }
+            contador++
+            alert("tentativas restantes  " + (tentativas - contador ));
+
+        } while (contador < tentativas);
+
+        if(contador === tentativas) {
+            alert("Tentativas esgotadas")
+        }
+        
+</script>
+</body>     
+</html>
