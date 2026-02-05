@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+ <head>      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validação de acesso com for</title>
+    <script src="ex33.js" defer></script>
+ </head>
+<body>
+<script> 
+
+    let tentativas = 3;
+    let contador = 0;
+    let acessoLiberado = false;
+    let codigoSalvo = "ABG"
+
+    function verificarAcesso(codigoDigitado) {
+
+        if (codigoDigitado !== codigoSalvo) {
+            return {
+                sucesso: false,
+                mensagem: "Erro"
+            };
+        }
+        return {
+            sucesso: true,
+            mensagem: "Sucesso"
+        };
+    }
+
+    do {
+        let codigoDigitado = prompt("Digite o codigo de acesso");
+
+        let resultado = verificarAcesso(codigoDigitado);
+        
+        alert(resultado.mensagem);
+
+        if (resultado.sucesso) {
+            acessoLiberado = true;
+            break 
+        }
+        contador++;
+        alert("Erro, tentativas restantes  " + (tentativas - contador));
+
+    } while (!acessoLiberado && contador < tentativas);
+
+    if (contador === tentativas) {
+        alert("Tentativas excedidas");
+    }
+    
+
+ 
+</script>
+</body>
+</html>
