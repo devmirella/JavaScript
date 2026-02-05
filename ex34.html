@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>      
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Controle de acesso com estado, tentativas e condição composta</title>
+        <script src="ex34.js" defer></script>
+    </head>
+<body>
+<script>    
+    let limite = 3;
+    let tentativas = 0;
+    let acessoLiberado = false;
+    const codigoSalvo = "ABC123";
+    
+    function validarAcesso(codigoDigitado) {
+        
+        if (codigoDigitado !== codigoSalvo) {
+            return {
+                sucesso: false,
+                mensagem: "Acesso negado"
+            };
+        }
+        return {
+            sucesso: true,
+            mensagem: "Acesso liberado"
+        };
+    }
+
+    do {
+        let codigoDigitado = prompt("Digite o codigo: ");
+
+        let resultado = validarAcesso(codigoDigitado);
+
+        if (resultado.sucesso) {
+            alert(resultado.mensagem);
+            acessoLiberado = true;
+            break;
+        }
+
+        tentativas++
+
+        if (tentativas === limite - 1) {
+            alert("Ultima tentativa");
+        } else {
+            alert("Tentativas restantes  " + (limite - tentativas));
+        }
+    } while (!acessoLiberado && tentativas < limite);
+
+    if (!acessoLiberado) {
+        alert("Acesso bloqueado");
+    }
+</script>
+</body> 
+</html>
