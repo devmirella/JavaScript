@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 35</title> 
+</head>
+<body>  
+    <!-- Campo onde o usuário digita o código -->
+   <input type="text" id="codigo" placeholder="Digite o código">
+
+   <!-- Botão onde o usário clica para válidar -->
+   <button id="btnValidar">Validar</button>
+
+   <!-- Parágrafo onde o JS vai escrever uma mensagem -->
+   <p id="mensagem"></p>
+
+<script>
+    // Seleciona input pelo id "codigo"
+    const inputCodigo = document.querySelector("#codigo");
+
+    // Seleciona o botão pelo id "btnValidar"
+    const botao = document.querySelector("#btnValidar");
+
+    // Seleciona o parágrafo onde a mensagem será exibida
+    const mensagem = document.querySelector("#mensagem");
+
+    let tentativas = 0;
+    let limite = 3;
+    const codigoSalvo = "ABD";
+
+    function validarCodigo(codigoDigitado) {
+        
+
+        if (codigoDigitado !== codigoSalvo) {
+            return {
+                sucesso: false,
+                mensagem: "Código inválido"
+            };
+        }
+        return {
+            sucesso: true,
+            mensagem: "Código válido"
+        };
+    }
+
+    // Escuta o clique do botão
+    botao.addEventListener("click", function () {
+        
+        // Pega o valor digitado no input
+        const codigoDigitado = inputCodigo.value;
+
+        // Envia o valor para a função de validação
+        const resultado = validarCodigo(codigoDigitado);
+
+        // Se o resultado indicar falha
+        if (resultado.sucesso === false) {
+            
+            // Incrementa o contador de tentativas
+            tentativas++;
+
+            // Mostra a mensagem retornada pela função
+            mensagem.textContent = resultado.mensagem;
+            
+            // Se atingir o limite de tentativas
+            if (tentativas === limite) {
+
+                // Mostra mensagem final 
+                mensagem.textContent = "Tentativas esgotadas";
+
+                // Desativa o botão para impedir novas tentativas
+                botao.disabled = true;
+            }
+
+            // interrompe a execução aqui
+            return;
+        }
+
+    // Se chegou ate aqui, o código foi validado com sucesso    
+    mensagem.textContent = resultado.mensagem;
+    });
+</script>
+</body>
+</html>
