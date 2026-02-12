@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de Código com Controle de Tentativas e Separação de Responsabilidade</title>
+</head>
+<body>  
+    <input type="text" id="codigo" placeholder="Digite o código">
+    <button id="btnValidar">Validar</button>
+    <p id="mensagem"></p>
+
+<script>
+       const inputCodigo = document.querySelector("#codigo");
+       const botao = document.querySelector("#btnValidar");
+       const mensagem = document.querySelector("#mensagem");
+
+       let tentativas = 0;
+       let limite = 3;
+       const codigoSalvo = "ABD";
+
+       function verificarCodigo(codigoDigitado) {
+
+        // Verifica se o campo está vazio (remove espaços com trim())
+        if (codigoDigitado.trim () === "") {
+            return {
+                sucesso: false,
+                mensagem: "O código não pode ser vazio",
+                contarTentativa: false
+            };
+        }
+        if (codigoDigitado !== codigoSalvo) {
+            return {
+                sucesso: false,
+                mensagem: "Código inválido",
+                contarTentativa: true
+            };
+        }
+        return {
+            sucesso: true,
+            mensagem: "Código válido",
+            contarTentativa: false
+        };
+       }
+
+       botao.addEventListener("click", function () {
+
+        // Pega o valor atual digitado no input
+        const codigoDigitado = inputCodigo.value;
+        // Envia o valor para função validar
+        const resultado = verificarCodigo(codigoDigitado);
+
+        // Se não teve sucesso (ou seja, houve erro)
+        if (!resultado.sucesso) {
+            // Se contarTentativa for true, incrementa o contador de tentativas
+            if (resultado.contarTentativa) {
+                tentativas++;
+                mensagem.textContent = 
+                resultado.mensagem + 
+                " Restam  " + (limite - tentativas) + "  tentativas.";
+                
+            } else {
+                // Se caso seja erro de campo vazio, não conta tentativa
+                mensagem.textContent = resultado.mensagem
+            }
+            if (tentativas === limite) {
+                mensagem.textContent = "Número máximo de tentativas atingido. Acesso bloqueado.";
+                botao.disabled = true;
+            }
+            // Limpa o campo após cada tentativa
+            inputCodigo.value = "";
+            return;
+        }
+        mensagem.textContent = resultado.mensagem;
+     }); 
+
+</script>
+</body>
+</html>
