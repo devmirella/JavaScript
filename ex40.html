@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Refina controle de acesso com feedback visual básico</title>
+    </head>
+    <style>
+    #btnValidar {
+        background-color: #4CAF50; /* verde */
+        color: white;              /* cor do texto */
+        border: none;
+        padding: 5px 10px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    #btnValidar:hover {
+        background-color: #43a047; /* verde mais escuro */
+    }
+
+    #codigo {
+    width: 220px;
+    padding: 10px;
+    font-size: 16px;
+
+    border: 2px solid #ccc;
+    border-radius: 6px;
+
+    outline: none; /* remove a borda azul padrão */
+    }
+</style>
+
+<body>
+    <input type="text" id="codigo" placeholder="Digite o Código">
+    <button id="btnValidar">Validar</button>
+    <p id="mensagem"></p>
+    <p id="tentativas"></p>
+    <script src="ex40.js"></script>
+</body>
+</html>
